@@ -2,9 +2,17 @@ package elasticsearch
 
 import (
 	"context"
+	"fmt"
 	"time"
 
+	"github.com/maitungmn/bookstore_items-api/logger"
+
+	"github.com/maitungmn/bookstore_items-api/utils/env_utils"
 	"github.com/olivere/elastic"
+)
+
+const (
+	ElasticUrl = "ELASTIC_URL"
 )
 
 var (
@@ -13,7 +21,7 @@ var (
 
 type esClientInterface interface {
 	setClient(*elastic.Client)
-	Index(interface{}) (*elastic.IndexResponse, error)
+	Index(string, interface{}) (*elastic.IndexResponse, error)
 }
 
 type esClient struct {
@@ -22,7 +30,7 @@ type esClient struct {
 
 func Init() {
 	client, err := elastic.NewClient(
-		elastic.SetURL("http://127.0.0.1:9200"),
+		elastic.SetURL(env_utils.GetEnvVariable(ElasticUrl)),
 		elastic.SetHealthcheckInterval(10*time.Second),
 	)
 	if err != nil {
@@ -31,11 +39,20 @@ func Init() {
 	Client.setClient(client)
 }
 
-func setClient(client *elastic.Client) {
+func (c *esClient) setClient(client *elastic.Client) {
 	c.client = client
 }
 
-func (c *esClient) Index(interface{}) (*elastic.IndexResponse, error) {
+func (c *esClient) Index(index string, doc interface{}) (*elastic.IndexResponse, error) {
 	ctx := context.Background()
-	return c.client.Index().Do(ctx)
+	result, err := c.client.Index().
+		Index(index).
+		BodyJson(doc).
+		Do(ctx)
+
+	if err != nil {
+		logger.Error(fmt.Sprintf("error when trying to index document in index %v", index), err)
+		return nil, err
+	}
+	return result, nil
 }

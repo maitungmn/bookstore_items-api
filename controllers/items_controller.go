@@ -29,6 +29,13 @@ func (c *itemsController) Create(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	sellerID := oauth.GetCallerId(r)
+	if sellerID == 0 {
+		respErr := rest_errors.NewUnauthorizedError("unable to retrieve user information from given access_token")
+		http_utils.RespondError(w, respErr)
+		return
+	}
+
 	requestBody, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		respErr := rest_errors.NewBadRequestError("invalid request body")
@@ -44,7 +51,7 @@ func (c *itemsController) Create(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	itemRequest.Seller = oauth.GetClientId(r)
+	itemRequest.Seller = sellerID
 
 	// item := items.Item{
 	// 	Seller: oauth.GetCallerId(r),

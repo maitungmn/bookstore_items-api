@@ -1,10 +1,15 @@
 package app
 
 import (
+	"github.com/maitungmn/bookstore_items-api/utils/env_utils"
 	"net/http"
 
 	"github.com/gorilla/mux"
 	"github.com/maitungmn/bookstore_items-api/clients/elasticsearch"
+)
+
+const (
+	LocalUrl = "LOCAL_URL"
 )
 
 var (
@@ -19,7 +24,7 @@ func StartApplication() {
 
 	srv := &http.Server{
 		Handler: router,
-		Addr:    "127.0.0.1:8000",
+		Addr:    env_utils.GetEnvVariable(LocalUrl),
 	}
 
 	if err := srv.ListenAndServe(); err != nil {

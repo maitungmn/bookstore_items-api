@@ -3,14 +3,14 @@ package controllers
 import (
 	"encoding/json"
 	"github.com/gorilla/mux"
-	"github.com/maitungmn/bookstore_items-api/domain/queries"
+	"github.com/maitungmn/bookstore_items-api/src/domain/queries"
 	"io/ioutil"
 	"net/http"
 	"strings"
 
-	"github.com/maitungmn/bookstore_items-api/domain/items"
-	"github.com/maitungmn/bookstore_items-api/services"
-	"github.com/maitungmn/bookstore_items-api/utils/http_utils"
+	"github.com/maitungmn/bookstore_items-api/src/domain/items"
+	"github.com/maitungmn/bookstore_items-api/src/services"
+	"github.com/maitungmn/bookstore_items-api/src/utils/http_utils"
 	"github.com/maitungmn/bookstore_oauth-go/oauth"
 	"github.com/maitungmn/bookstore_utils-go/rest_errors"
 )

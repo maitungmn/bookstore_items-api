@@ -3,9 +3,9 @@ package app
 import (
 	"net/http"
 
-	"github.com/maitungmn/bookstore_utils-go/env_utils"
 	"github.com/gorilla/mux"
-	"github.com/maitungmn/bookstore_items-api/clients/elasticsearch"
+	"github.com/maitungmn/bookstore_items-api/src/clients/elasticsearch"
+	"github.com/maitungmn/bookstore_utils-go/env_utils"
 )
 
 const (

@@ -31,6 +31,14 @@ github.com/maitungmn/bookstore_users-api-go v0.0.0-20200619135344-7306d249c3c2/g
 github.com/maitungmn/bookstore_utils-go v0.0.0-20200619134153-9f19821b50bd/go.mod h1:LG0RbNPZ/LxvHbFQLKZXlCFPZ5Pb7aY0FDqyP3dy4p0=
 github.com/maitungmn/bookstore_utils-go v0.0.0-20200621041648-091f31aa0447 h1:lB3tcguh/+Q88xcS9HOfOV0pcFU87aSVEAQL/Pwt8RM=
 github.com/maitungmn/bookstore_utils-go v0.0.0-20200621041648-091f31aa0447/go.mod h1:LG0RbNPZ/LxvHbFQLKZXlCFPZ5Pb7aY0FDqyP3dy4p0=
+github.com/maitungmn/bookstore_utils-go v0.0.0-20200622021646-825b2b31949d h1:m8t3VLw5jH0HqKW6GW/FGGHNl09lIFwkXKMAUXJvTgs=
+github.com/maitungmn/bookstore_utils-go v0.0.0-20200622021646-825b2b31949d/go.mod h1:ldHqz1i8sR8Y3NHW0zjWXI4tBXZD5OnbwM+84PyEP10=
+github.com/maitungmn/bookstore_utils-go v0.0.0-20200622021927-42ff25acf1cf h1:4iES+S9Axikqkeq6y0d2CArQbwzHBfMhuYoJ6mkfOmI=
+github.com/maitungmn/bookstore_utils-go v0.0.0-20200622021927-42ff25acf1cf/go.mod h1:ldHqz1i8sR8Y3NHW0zjWXI4tBXZD5OnbwM+84PyEP10=
+github.com/maitungmn/bookstore_utils-go v0.0.0-20200622024314-138c71daa1c1 h1:p7RWwzWAM5q3xq55titA7xwiH5+6+oRPKC4jEE+jCY8=
+github.com/maitungmn/bookstore_utils-go v0.0.0-20200622024314-138c71daa1c1/go.mod h1:ldHqz1i8sR8Y3NHW0zjWXI4tBXZD5OnbwM+84PyEP10=
+github.com/maitungmn/bookstore_utils-go v0.0.0-20200622024549-95faa23a1b7d h1:aAqsRHfiWPCT1a6leW8Lw6yYlKWaQ2DjWX3tTXi9+Po=
+github.com/maitungmn/bookstore_utils-go v0.0.0-20200622024549-95faa23a1b7d/go.mod h1:ldHqz1i8sR8Y3NHW0zjWXI4tBXZD5OnbwM+84PyEP10=
 github.com/mattn/go-isatty v0.0.12/go.mod h1:cbi8OIDigv2wuxKPP5vlRcQ1OAZbq2CE4Kysco4FUpU=
 github.com/mercadolibre/golang-restclient v0.0.0-20170701022150-51958130a0a0 h1:EDOjA2IGgjSBlPlnW7CzBUo/o410SMiFh670jP29Kc4=
 github.com/mercadolibre/golang-restclient v0.0.0-20170701022150-51958130a0a0/go.mod h1:Z7qYja4aGk/RWl1yJtN1LXRvC7Hsbq8SEbqWWDrMqMs=

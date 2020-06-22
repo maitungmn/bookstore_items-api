@@ -3,10 +3,9 @@ package elasticsearch
 import (
 	"context"
 	"fmt"
+	"github.com/maitungmn/bookstore_utils-go/env_utils"
 	"github.com/maitungmn/bookstore_utils-go/logger"
 	"time"
-
-	"github.com/maitungmn/bookstore_items-api/utils/env_utils"
 	"github.com/olivere/elastic"
 )
 

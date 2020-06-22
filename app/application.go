@@ -1,9 +1,9 @@
 package app
 
 import (
-	"github.com/maitungmn/bookstore_items-api/utils/env_utils"
 	"net/http"
 
+	"github.com/maitungmn/bookstore_utils-go/env_utils"
 	"github.com/gorilla/mux"
 	"github.com/maitungmn/bookstore_items-api/clients/elasticsearch"
 )

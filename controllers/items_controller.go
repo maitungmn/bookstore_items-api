@@ -2,8 +2,10 @@ package controllers
 
 import (
 	"encoding/json"
+	"github.com/gorilla/mux"
 	"io/ioutil"
 	"net/http"
+	"strings"
 
 	"github.com/maitungmn/bookstore_items-api/domain/items"
 	"github.com/maitungmn/bookstore_items-api/services"
@@ -53,10 +55,6 @@ func (c *itemsController) Create(w http.ResponseWriter, r *http.Request) {
 
 	itemRequest.Seller = sellerID
 
-	// item := items.Item{
-	// 	Seller: oauth.GetCallerId(r),
-	// }
-
 	result, err := services.ItemsService.Create(itemRequest)
 	if err != nil {
 		respErr := rest_errors.NewBadRequestError("invalid json body")
@@ -68,5 +66,13 @@ func (c *itemsController) Create(w http.ResponseWriter, r *http.Request) {
 }
 
 func (c *itemsController) Get(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	itemId := strings.TrimSpace(vars["id"])
 
+	item, err := services.ItemsService.Get(itemId)
+	if err != nil {
+		http_utils.RespondError(w, err)
+		return
+	}
+	http_utils.RespondJson(w, http.StatusOK, item)
 }
